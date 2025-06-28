@@ -1,3 +1,17 @@
+---
+title: STT POC
+emoji: 👁
+colorFrom: indigo
+colorTo: gray
+sdk: gradio
+sdk_version: 5.34.2
+app_file: app.py
+pinned: false
+short_description: Proof of concept for speech to text and transcriber
+---
+
+Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
+
 # Whisper Speech-to-Text Web App
 
 Welcome! This repository provides a simple, self-hosted web application for automatic speech recognition (ASR) using OpenAI's Whisper model (large-v3), powered by Gradio.  
