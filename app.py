@@ -23,13 +23,19 @@ pipe = pipeline(
     feature_extractor=processor.feature_extractor,
     torch_dtype=torch_dtype,
     device=device,
+    generate_kwargs={"task": "transcribe"},
 )
 
 dataset = load_dataset("distil-whisper/librispeech_long", "clean", split="validation")
 sample = dataset[0]["audio"]
 
+
 def transcribe(audio):
-    result = pipe(audio)
+    if audio is None:
+        return "No audio provided!"
+    sampling_rate, data = audio
+    data = data.astype("float32")
+    result = pipe({"sampling_rate": sampling_rate, "raw": data})
     return result["text"]
 
 
