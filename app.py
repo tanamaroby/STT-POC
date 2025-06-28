@@ -17,7 +17,7 @@ model.to(device)
 processor = AutoProcessor.from_pretrained(model_id)
 
 pipe = pipeline(
-    "automatic_speech_recognition",
+    "automatic-speech-recognition",
     model=model,
     tokenizer=processor.tokenizer,
     feature_extractor=processor.feature_extractor,
